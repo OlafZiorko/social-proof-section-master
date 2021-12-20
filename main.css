@@ -1,0 +1,237 @@
+:root {
+  /*PRIMARY COLORS PALLET */
+
+  --clr-primary-500: hsl(300, 43%, 22%);
+  --clr-primary-400: hsl(303, 10%, 53%);
+  --clr-primary-300: hsla(333, 80%, 67%, 0.712);
+  --clr-primary-200: hsl(300, 24%, 96%);
+  --clr-primary-100: hsl(0, 0%, 100%);
+
+  /*FONTS AND WEIGHTS*/
+  --fn-fam: "Spartan", sans-serif;
+  --fn-wght-400: 400;
+  --fn-wght-500: 500;
+  --fn-wght-700: 700;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+body {
+  background-color: var(--clr-primary-100);
+  font-family: var(--fn-fam);
+  font-size: 62.5%;
+  height: 100vh;
+}
+.page__wrapper {
+  background-image: url(./images/bg-pattern-top-mobile.svg);
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  justify-content: center;
+  margin: 0 auto;
+  grid-template-areas:
+    "header"
+    "rate"
+    "cards";
+
+  padding: 4.6rem 1.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+/*HEADER SECTION */
+.page__header {
+  text-align: center;
+  grid-area: header;
+}
+.header--title {
+  color: var(--clr-primary-500);
+  font-size: 2.1rem;
+  font-weight: var(--fn-wght-700);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+.header--description {
+  color: var(--clr-primary-400);
+  font-size: 0.89rem;
+  font-weight: var(--fn-wght-500);
+  line-height: 1.7;
+}
+/*RATE SECTION */
+.rate__section {
+  padding: 1.5rem 0;
+  grid-area: rate;
+}
+.rate {
+  background-color: var(--clr-primary-200);
+  border-radius: 0.5rem;
+  margin: 1.1rem 0;
+  padding: 1.5em 0;
+  text-align: center;
+}
+.rate--list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.rate--list li {
+  padding: 0 0.25rem;
+}
+
+.rate--description p {
+  color: var(--clr-primary-500);
+  font-weight: var(--fn-wght-700);
+  font-size: 0.78rem;
+}
+/*REVIEW SECTION */
+.revies__section {
+  margin-top: 0.8rem;
+  grid-area: cards;
+}
+.card {
+  background-color: var(--clr-primary-500);
+  border-radius: 0.5rem;
+  padding: 2.5rem 2rem;
+  margin-bottom: 1rem;
+}
+.card__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.user--img {
+  border-radius: 100%;
+  width: 2.55rem;
+}
+.user--detail {
+  margin-left: 1.5rem;
+  align-self: flex-start;
+}
+.user--name {
+  color: var(--clr-primary-100);
+  font-size: 0.85rem;
+  font-weight: var(--fn-wght-500);
+  padding-bottom: 0.2rem;
+}
+.user--isverified {
+  color: var(--clr-primary-300);
+  font-size: 0.85rem;
+  font-weight: var(--fn-wght-400);
+}
+.card__body p {
+  color: var(--clr-primary-200);
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 1400px) {
+  .page__wrapper {
+    background-image: url(./images/bg-pattern-top-desktop.svg);
+    grid-template-columns: repeat(6, 4fr);
+    justify-content: start;
+    margin: 0;
+    grid-template-areas:
+      "header header header rate rate rate"
+      "cards cards cards cards cards cards ";
+    padding: 5rem 11rem;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  /*HEADER SECTION */
+  .page__header {
+    text-align: left;
+    grid-area: header;
+    margin-bottom: 4rem;
+    padding: 3rem 2rem 0 0;
+  }
+  .header--title {
+    font-size: 3rem;
+    letter-spacing: -1px;
+    margin-bottom: 1.1rem;
+  }
+  .header--description {
+    color: var(--clr-primary-400);
+    font-size: 0.899rem;
+    font-weight: var(--fn-wght-500);
+    line-height: 1.7;
+    padding-right: 3rem;
+  }
+
+  /*REVIEW SECTION */
+  .revies__section {
+    margin-top: 0;
+    grid-area: cards;
+    display: flex;
+    gap: 2rem;
+  }
+  .card {
+    max-width: 370px;
+  }
+  .card:nth-child(2) {
+    transform: translateY(1rem);
+  }
+  .card:nth-child(3) {
+    transform: translateY(2rem);
+  }
+  .card__body p {
+    font-size: 0.85rem;
+  }
+
+  /*RATE SECTION */
+  .rate__section {
+    padding: 0;
+    grid-area: rate;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 3.5rem;
+  }
+
+  .rate {
+    text-align: left;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.1rem 2rem;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  .rate:nth-child(2) {
+    margin-left: 3.1rem;
+  }
+  .rate:nth-child(2) .rate--description p {
+    margin-right: 2em;
+  }
+  .rate:nth-child(3) {
+    margin-left: 6.2rem;
+  }
+  .rate:nth-child(3) .rate--description p {
+    margin-right: 3.8em;
+  }
+  .rate--list {
+    margin: 0;
+    padding: 0;
+    align-items: left;
+  }
+  .rate--list li {
+    padding: 0 0.25rem;
+  }
+
+  .rate--description p {
+    font-size: 0.8rem;
+    margin-left: 2rem;
+  }
+}
