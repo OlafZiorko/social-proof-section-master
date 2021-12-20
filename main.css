@@ -176,7 +176,9 @@ body {
   }
   .card {
     max-width: 370px;
+    padding: 2.2rem 2rem;
   }
+
   .card:nth-child(2) {
     transform: translateY(1rem);
   }
@@ -184,7 +186,7 @@ body {
     transform: translateY(2rem);
   }
   .card__body p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   /*RATE SECTION */
